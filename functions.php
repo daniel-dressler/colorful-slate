@@ -1,0 +1,75 @@
+<?php
+/*
+ * Colorful Slate uses existing wordpress features
+ * instead of custom admin panels.
+ */
+define('WP_DEBUG', true);
+add_theme_support( 'custom-background', array(
+		// Let WordPress know what our default background color is.
+		// This is dependent on our current color scheme.
+		'default-color' => 'A14296',
+	) );
+
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 500, 300, false );
+
+register_nav_menu( 'primary', __( 'Primary Menu', 'colorfulslate' ) );
+register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'colorfulslate' ),
+		'id' => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget well sidebar-nav">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+function theme_slug_enqueue_comment_reply_script() {
+	if ( comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'comment_form_before', 'theme_slug_enqueue_comment_reply_script' );
+
+function CLRFL_get_stripe_opacity() {
+	/* The darkness of the stripes is based on
+	 * lightness of the background color.
+	 */
+	$bg_color = get_background_color();
+
+	//find lightest hue
+	$stripe_lightness = 0;
+	$max_color_component = 0;
+	//bias towards green, which is a higher energy color
+	$biases = array(0.8, 1.0, 0.8);
+	foreach (str_split($bg_color, 2) as $hex) {
+		$bias = array_pop($biases);
+		$hex = hexdec($hex);
+		$lightness = $hex * $bias;
+		if ($max_color_component < $lightness) {
+			$max_color_component = $lightness;
+		}
+	}
+	$stripe_lightness = $max_color_component;
+
+	//how close to white are we?
+	//aka, how black are we?
+	//full black would be 1.0
+	//a full hue is 0.0
+	$factor = (255.0 - $stripe_lightness) / 255.0;
+
+	//provies an extra splash
+	//of darkness for light colors,
+	//and extra lightness for dark colors
+	$bias = 0.15  * - ($factor - 0.5) * 2;
+
+	//notice how things are looking like a polynomial
+	$pure_bias = -0.1;
+
+	//the magic formula, our wizardry is done
+	return  $factor + $bias + $pure_bias;
+
+	/*
+	 * If you ever need a reason why
+	 * high school math is useful...
+	 */
+}
