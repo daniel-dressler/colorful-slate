@@ -1,18 +1,33 @@
 <?php
 /*
  * Colorful Slate uses existing wordpress features
- * instead of custom admin panels.
+ * instead of custom admin panels. I've seen too many
+ * monstor themes attempt to create a CMS within
+ * wordpress.
  */
 define('WP_DEBUG', true);
+
+/* Our unique feature, the huge color background & favicon */
 add_theme_support( 'custom-background', array(
 		// Let WordPress know what our default background color is.
 		// This is dependent on our current color scheme.
 		'default-color' => 'A14296',
 	) );
+function CLRFL_enqueue_favicon() {
+	wp_enqueue_script( 
+		"CLRFL_favicon_js",
+		get_template_directory_uri()."/js/CLRFL_color_favicon.js",
+		array('jquery')
+	);
+}
+add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue_favicon' );
 
+
+/* Thumbnails */
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 500, 300, false );
 
+/* Sidebar & main menu */
 register_nav_menu( 'primary', __( 'Primary Menu', 'colorfulslate' ) );
 register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'colorfulslate' ),
@@ -23,13 +38,16 @@ register_sidebar( array(
 		'after_title' => '</h4>',
 	) );
 
-function theme_slug_enqueue_comment_reply_script() {
+/* Threaded comments */
+function CLRFL_enqueue_comment_reply_script() {
 	if ( comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'comment_form_before', 'theme_slug_enqueue_comment_reply_script' );
+add_action( 'comment_form_before', 'CLRFL_enqueue_comment_reply_script' );
 
+/* The Stripe background's opacity varies
+ * depending on the background color. */
 function CLRFL_get_stripe_opacity() {
 	/* The darkness of the stripes is based on
 	 * lightness of the background color.
@@ -63,7 +81,7 @@ function CLRFL_get_stripe_opacity() {
 	$bias = 0.15  * - ($factor - 0.5) * 2;
 
 	//notice how things are looking like a polynomial
-	$pure_bias = -0.1;
+	$pure_bias = -0.3;
 
 	//the magic formula, our wizardry is done
 	return  $factor + $bias + $pure_bias;

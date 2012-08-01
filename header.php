@@ -65,6 +65,7 @@
 	.thumbnail, .CLRFL-unstriped,
 	.CLRFL-postlisting h2 a:hover,
 	#CLRFL-footer .credits,
+	.sticky > div > div,
 	hr {
 		background: #<?php echo get_background_color(); ?>;
 	}

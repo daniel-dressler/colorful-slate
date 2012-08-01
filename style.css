@@ -13,6 +13,12 @@ License URI:
 General comments (optional).
 */
 
+/* =Wordpress classes
+-------------------------------------------------------------- */
+.sticky {
+
+}
+
 
 /* =Fonts
 -------------------------------------------------------------- */
@@ -144,6 +150,11 @@ a.thumbnail:hover {
 }
 .CLRFL-postmeta {
 	text-align: right;
+}
+.post > div > div {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
 }
 
 /* =Homepage
