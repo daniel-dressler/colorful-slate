@@ -127,6 +127,14 @@ hr {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
+/* Widgets */
+#searchform {
+	margin: 0;
+}
+#CLRFL-sidebar input {
+	max-width: 100%;
+}
+
 /* =Posts
 -------------------------------------------------------------- */
 .CLRFL-postlisting h2 a,
@@ -156,6 +164,10 @@ a.thumbnail:hover {
 	margin-bottom: 10px;
 	border-radius: 5px;
 }
+.CLRFL-postlisting > div > div > div a {
+	background: white;
+	padding: 2px;
+}
 
 /* =Homepage
 -------------------------------------------------------------- */
@@ -177,9 +189,7 @@ a.thumbnail:hover {
 	float: right;
 }
 #CLRFL-footer .credits span {
-	border-radius: 3px;
 	padding: 3px;
-	box-shadow: inset 0 0 3px black;
 }
 #CLRFL-footer .credits,
 #CLRFL-footer .credits a,
@@ -187,3 +197,25 @@ a.thumbnail:hover {
 	color: black;
 }
 
+/* =Content styling
+-------------------------------------------------------------- */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption-text {
+	font-style: italic;
+	font-size: 0.8em;
+}

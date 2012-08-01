@@ -69,6 +69,9 @@
 	hr {
 		background: #<?php echo get_background_color(); ?>;
 	}
+	.CLRFL-postlisting > div > div > div a {
+		color: #<?php echo get_background_color(); ?>;
+	}
 	.CLRFL-striped,
 	#CLRFL-footer .credits span {
 		opacity: <?php echo CLRFL_get_stripe_opacity(); ?>;
