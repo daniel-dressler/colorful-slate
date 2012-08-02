@@ -28,4 +28,6 @@ jQuery().ready(function() {
 		link.type = "image/x-icon";
 		link.href = canvas.toDataURL();
 	}
+	
+	jQuery(".thumbnail img").removeAttr("height");
 });

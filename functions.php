@@ -10,8 +10,7 @@ define('WP_DEBUG', true);
 /* Our unique feature, the huge color background & favicon */
 add_theme_support( 'custom-background', array(
 		// Let WordPress know what our default background color is.
-		// This is dependent on our current color scheme.
-		'default-color' => 'A14296',
+		'default-color' => 'F36C00',
 	) );
 function CLRFL_enqueue_favicon() {
 	wp_enqueue_script( 
@@ -88,16 +87,11 @@ function CLRFL_get_stripe_opacity() {
 	//a full hue is 0.0
 	$factor = (255.0 - $stripe_lightness) / 255.0;
 
-	//provies an extra splash
-	//of darkness for light colors,
-	//and extra lightness for dark colors
-	$bias = 0.15  * - ($factor - 0.5) * 2;
-
 	//notice how things are looking like a polynomial
-	$pure_bias = -0.3;
+	$pure_bias = 0.85;
 
 	//the magic formula, our wizardry is done
-	return  $factor + $bias + $pure_bias;
+	return  ($factor) * $pure_bias;
 
 	/*
 	 * If you ever need a reason why

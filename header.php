@@ -73,6 +73,7 @@
 	.CLRFL-striped,
 	#CLRFL-footer .credits span {
 		opacity: <?php echo CLRFL_get_stripe_opacity(); ?>;
+		filter: alpha(opacity=<?php echo CLRFL_get_stripe_opacity()*100; ?>);
 	}
 </style>
 </head>
@@ -85,5 +86,4 @@
 			<h1><a href="<?php echo get_home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php get_sidebar(); ?>
 		</div>
-
 		<div id="CLRFL-content" class="span9" style="position: relative;">
