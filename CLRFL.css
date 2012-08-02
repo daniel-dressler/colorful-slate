@@ -1,0 +1,207 @@
+/* =Fonts
+-------------------------------------------------------------- */
+body {
+	font-family:'Ubuntu', sans-serif;
+}
+body, h6 {
+	color: white;
+}
+h1 {
+	font-weight:300;
+}
+#CLRFL-sidebar .widget-title {
+	color: #999999;
+    font-weight: bold;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+
+/* =Structure
+-------------------------------------------------------------- */
+html,
+body,
+body > .container-fluid,
+body > .container-fluid > .row-fluid {
+	height: 100%;
+}
+#CLRFL-content {
+	min-height: 100%;
+}
+body > .container-fluid {
+	padding-right:0;
+}
+#CLRFL-content {
+	padding: 0 20px;
+	padding-left:2.5641%;
+}
+#CLRFL-sidebar,
+#CLRFL-content {
+	padding-top: 20px;
+}
+#CLRFL-sidebar > * {
+	margin:30px 0;
+}
+
+
+/* =Colors
+-------------------------------------------------------------- */
+.thumbnail, .CLRFL-unstriped {
+	border: none;
+	background: #A14296; /* user setting*/
+}
+.well {
+	background: rgba(256,256,256,0.7);
+}
+#CLRFL-sidebar .widget a:hover {
+	background: #EEE;
+	text-decoration: none;
+}
+
+/* stripes */
+.CLRFL-unstriped {
+	/* empty */
+}
+.CLRFL-striped {
+	position:absolute;
+	top:0; left:0; right:0; bottom:0;
+	background:url("img/stripe.png");
+	opacity: 0.4; /* user settings */
+	z-index: -1;
+}
+
+/* Horizontal break */
+hr {
+	height: 5px;
+	width: 50%;
+	margin: 5px 0;
+	border-radius: 5px 0;
+	border: none;
+}
+
+#CLRFL-content hr:nth-last-child(2) {
+	width: 100%;
+}
+
+/* =Sidebar
+-------------------------------------------------------------- */
+#CLRFL-sidebar > h1 a,
+#CLRFL-sidebar > h1 a:hover {
+	color: white;
+	text-decoration: none;
+}
+#CLRFL-sidebar .widget ul {
+	list-style: none outside none;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 0;
+}
+#CLRFL-sidebar .widget li a {
+	margin-left: -15px;
+	margin-right: -15px;
+	padding: 3px 15px;
+	display: block;
+}
+#CLRFL-sidebar .widget-title {
+	padding: 3px 15px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Widgets */
+#searchform {
+	margin: 0;
+}
+#CLRFL-sidebar input {
+	max-width: 100%;
+}
+
+/* =Posts
+-------------------------------------------------------------- */
+.CLRFL-postlisting h2 a,
+.CLRFL-postlisting h2 a:hover {
+	color: white;
+	text-decoration: none;
+	padding: 3px;
+	margin-left: -3px;
+	border-radius: 3px;
+}
+.CLRFL-postlisting .thumbnail img {
+	height: auto !important;
+}
+a.thumbnail:hover {
+	/*background: transparent;
+	box-shadow: inset;*/
+	background: white;
+}
+.CLRFL-postlisting {
+	padding-bottom: 10px;
+}
+.CLRFL-postmeta {
+	text-align: right;
+}
+.post > div > div {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+.entry-summary a {
+	background: white;
+	padding: 2px;
+}
+
+/* =Homepage
+-------------------------------------------------------------- */
+.carousel .item > img {
+	width:100%;
+}
+.carousel .item {
+	max-height: 500px; /* user option */
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+#CLRFL-footer {
+	text-align: center;
+	opacity: 1;
+	/* display: none; /* Delete the first /* to hide credits */
+}
+#CLRFL-footer .credits {
+	float: right;
+}
+#CLRFL-footer .credits span {
+	padding: 3px;
+}
+#CLRFL-footer .credits,
+#CLRFL-footer .credits a,
+#CLRFL-footer .credits a:hover {
+	color: black;
+}
+
+/* =Content styling
+-------------------------------------------------------------- */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption-text {
+	font-style: italic;
+	font-size: 0.8em;
+}
+ul {
+	list-style-type: square;
+}
+.commentlist, .commentlist ul {
+	list-style: none;
+}

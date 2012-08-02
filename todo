@@ -1,13 +1,3 @@
-proper readmore links
-
-threaded comments
-
-single page
-
-Archive & category pages with header
-
-support child themes
-
 test cross browser
 
 test printing
@@ -15,3 +5,5 @@ test printing
 navigation menu
 
 pagination, wp_link_pages
+
+inline reaable non-colored link style

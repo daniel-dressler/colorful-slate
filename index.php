@@ -8,6 +8,9 @@
  */
 
 get_header(); ?>
+			<?php if (is_archive()) {?>
+				<h1><?php wp_title();?></h1>
+			<?php } ?>
         	<div class="CLRFL-striped">
         	</div>
 			<?php if ( have_posts() ) : ?>

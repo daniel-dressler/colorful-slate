@@ -22,17 +22,24 @@
 		      		<?php if ( 1 /* excrepts? */) {?>
 						<div class="entry-summary">
 							<?php the_content(); ?>
+							<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div>
 					<?php } else if ( 0 /* full post */ ) {} ?>
 		      		<div class="CLRFL-postmeta">
 		      			<?php
-		      				$editPostUrl = get_edit_post_link();
-		      				if ($editPostUrl) {
-		      					echo "<a class='btn' href='$editPostUrl'>&laquo ".__( 'Edit', 'colorfulslate' )."</a>";
-		      				}?>
-		      			<a class="btn" href="<?php the_permalink(); ?>"><?php echo __( 'Read more', 'colorfulslate' )?> &raquo;</a>
+	      				$editPostUrl = get_edit_post_link();
+	      				if ($editPostUrl) {
+	      					echo "<a style='margin-right:5px;' class='btn' href='$editPostUrl'>&laquo ".__( 'Edit', 'colorfulslate' )."</a>";
+	      				}
+	      				if (comments_open() && !(is_single() || is_page())) {
+	      					comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentyeleven' ) . '</span>', __( '<b>1</b> Reply', 'twentyeleven' ), __( '<b>%</b> Replies', 'twentyeleven' ), 'btn' );
+						}?>
 		      		</div>
           		</div>
 			</div>
 			<hr>
+			<?php
+			if (is_single() || is_page()) {
+				comments_template();
+			}?>
 		</div>

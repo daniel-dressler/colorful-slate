@@ -22,6 +22,12 @@ function CLRFL_enqueue_favicon() {
 }
 add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue_favicon' );
 
+/* Style sheet */
+function CLRFL_enqueue_style() {
+	wp_enqueue_style( "CLRFL-style",
+	                  get_template_directory_uri()."/CLRFL.css");
+}
+add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue_style' );
 
 /* Thumbnails */
 add_theme_support( 'post-thumbnails' );
@@ -45,6 +51,13 @@ function CLRFL_enqueue_comment_reply_script() {
 	}
 }
 add_action( 'comment_form_before', 'CLRFL_enqueue_comment_reply_script' );
+
+/* Read more links */
+function CLRFL_excerpt_more($more) {
+	global $post;
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
+}
+add_filter('excerpt_more', 'CLRFL_excerpt_more');
 
 /* The Stripe background's opacity varies
  * depending on the background color. */

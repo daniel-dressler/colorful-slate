@@ -17,7 +17,7 @@ jQuery().ready(function() {
 	
 		/* Get color */
 		var color = jQuery("body").css("background-color");
-		console.log(color);
+		
 		/* Color canvas */
 		context.beginPath();
 		context.rect(0,0,icon_size,icon_size);
