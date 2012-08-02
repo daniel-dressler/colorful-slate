@@ -21,7 +21,18 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php //twentyeleven_content_nav( 'nav-below' ); ?>
+				<div id="CLRL-pagination" class="post">
+				<?php
+				//pagination
+				global $wp_query;
+				echo paginate_links( array(
+					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+					'format' => '?paged=%#%',
+					'current' => max( 1, get_query_var('paged') ),
+					'total' => $wp_query->max_num_pages
+				) );
+				?>
+				</div>
 
 			<?php else : ?>
 
