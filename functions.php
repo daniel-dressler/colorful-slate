@@ -11,19 +11,34 @@ add_theme_support( 'custom-background', array(
 		// Let WordPress know what our default background color is.
 		'default-color' => 'F36C00',
 	) );
-function CLRFL_enqueue_favicon() {
+	
+function CLRFL_enqueue() {
+	wp_enqueue_style( "bootstrap",
+	                  get_template_directory_uri()."/lib/bootstrap/css/bootstrap.css");
+	wp_enqueue_style( "bootstrap-responsive",
+	                  get_template_directory_uri()."/lib/bootstrap/css/bootstrap-responsive.css",
+	                  array('bootstrap'));
+	wp_enqueue_style( "CLRFL-style",
+	                  get_template_directory_uri()."/CLRFL.css",
+	                  array('bootstrap', 'bootstrap-responsive'));
+	wp_enqueue_style( "ubuntu-font",
+	                  'http://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic&subset=latin,latin-ext,greek,greek-ext,cyrillic,cyrillic-ext');
+	
+	
 	wp_enqueue_script( 
 		"CLRFL_favicon_js",
 		get_template_directory_uri()."/js/CLRFL_color_favicon.js",
 		array('jquery')
 	);
+	/* Threaded comments */
+	if ( comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue_favicon' );
+add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue' );
 
 /* Style sheet */
 function CLRFL_enqueue_style() {
-	wp_enqueue_style( "CLRFL-style",
-	                  get_template_directory_uri()."/CLRFL.css");
 }
 add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue_style' );
 
@@ -41,14 +56,6 @@ register_sidebar( array(
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
-
-/* Threaded comments */
-function CLRFL_enqueue_comment_reply_script() {
-	if ( comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'comment_form_before', 'CLRFL_enqueue_comment_reply_script' );
 
 /* Read more links */
 function CLRFL_excerpt_more($more) {
@@ -99,3 +106,4 @@ function CLRFL_get_stripe_opacity() {
 }
 /* Wordpress required boiler plate */
 add_theme_support( 'automatic-feed-links' );
+$content_width = 500; //colorful slate is fluid width, so this is not always acurate

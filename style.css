@@ -5,8 +5,14 @@ Description: Make any one color look perfect!
 Author: Daniel Dressler
 Author URI: http://danieru.com/
 Version: 1.0
-Tags: light, two-columns, fluid-width, custom-colors, threaded-comments, translation-ready, custom-menu, sticky-post
+Tags: light, two-columns, flexible-width, custom-colors, threaded-comments, translation-ready, custom-menu, sticky-post
 
-License: GPLv3+
+License: GPLv2+
 License URI: https://www.gnu.org/licenses/gpl.txt
 */
+
+/* NOTE: You can ignore the folowing css rules.
+ * The wordpress theme checker is not smart
+ * enough to see that we enque the proper style sheet.
+ * Below is a work around for this limitation. */
+.sticky, .gallery-caption, .bypostauthor {}

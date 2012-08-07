@@ -21,7 +21,6 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/lib/bootstrap/js/bootstrap.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>
