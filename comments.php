@@ -1,4 +1,5 @@
-	<div id="comments">
+<div class="span12">
+<div id="CLRFL-comments" class="well CLRFL-color-links">
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.'); ?></p>
 	</div><!-- #comments -->
@@ -34,7 +35,6 @@
 				wp_list_comments();
 			?>
 		</ol>
-
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation'); ?></h1>
@@ -54,4 +54,5 @@
 
 	<?php comment_form(); ?>
 
+</div>
 </div><!-- #comments -->

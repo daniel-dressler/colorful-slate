@@ -34,7 +34,7 @@
 <link href="<?php bloginfo('template_directory'); ?>/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="<?php bloginfo('template_directory'); ?>/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic&subset=latin,latin-ext,greek,greek-ext,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -64,11 +64,17 @@
 	.CLRFL-postlisting h2 a:hover,
 	#CLRFL-footer .credits,
 	.sticky > div > div,
-	hr {
+	hr,
+	.entry-summary a {
 		background: #<?php echo get_background_color(); ?>;
 	}
-	.entry-summary a {
+	.entry-summary a:hover,
+	.CLRFL-color-links a,
+	#CLRFL-comments .required {
 		color: #<?php echo get_background_color(); ?>;
+	}
+	#respond {
+		border-top: 5px #<?php echo get_background_color(); ?> solid;
 	}
 	.CLRFL-striped,
 	#CLRFL-footer .credits span {

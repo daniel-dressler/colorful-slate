@@ -37,7 +37,7 @@
 		      		</div>
           		</div>
 			</div>
-			<hr>
+			<hr class="span12">
 			<?php
 			if (is_single() || is_page()) {
 				comments_template();

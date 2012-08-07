@@ -37,8 +37,8 @@ register_nav_menu( 'primary', __( 'Primary Menu', 'colorfulslate' ) );
 register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'colorfulslate' ),
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget well sidebar-nav">',
-		'after_widget' => "</aside>",
+		'before_widget' => '<aside id="%1$s" class="widget well sidebar-nav CLRFL-color-links">',
+		'after_widget' => '</aside>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
@@ -88,7 +88,7 @@ function CLRFL_get_stripe_opacity() {
 	$factor = (255.0 - $stripe_lightness) / 255.0;
 
 	//notice how things are looking like a polynomial
-	$pure_bias = 0.85;
+	$pure_bias = 0.65;
 
 	//the magic formula, our wizardry is done
 	return  ($factor) * $pure_bias;
