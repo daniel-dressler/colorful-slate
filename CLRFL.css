@@ -39,8 +39,6 @@ body > .container-fluid > .row-fluid {
 body > .container-fluid {
 	padding-right:0;
 }
-#CLRFL-content {
-}
 #CLRFL-sidebar,
 #CLRFL-content {
 	padding-top: 20px;
@@ -62,7 +60,7 @@ body > .container-fluid {
 #CLRFL-main-menu a:hover:before {
 	content: "»";
 	position: absolute;
-	left: -0.7em;
+	left: -0.5em;
 }
 .entry-summary a {
 	color: white;
@@ -173,6 +171,7 @@ body > .container-fluid {
 	text-decoration: none;
 	padding: 3px;
 	margin-left: -3px;
+	font-size: 2em;
 	font-weight: 300;
 	border-radius: 3px;
 }
@@ -187,6 +186,7 @@ a.thumbnail:hover {
 }
 .CLRFL-postmeta {
 	text-align: right;
+	float: right;
 }
 #CLRFL-content > .post,
 #CLRFL-content > .page {

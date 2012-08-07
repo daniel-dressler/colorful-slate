@@ -70,7 +70,8 @@
 	}
 	.entry-summary a:hover,
 	.CLRFL-color-links a,
-	#CLRFL-comments .required {
+	#CLRFL-comments .required,
+	.CLRFL-postmeta a {
 		color: #<?php echo get_background_color(); ?>;
 	}
 	#respond {
