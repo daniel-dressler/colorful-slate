@@ -163,8 +163,12 @@ body > .container-fluid {
 	max-width: 100%;
 }
 
-/* =Posts
+/* =Content Column (posts)
 -------------------------------------------------------------- */
+#CLRFL-archive-header h1 {
+	padding: 5px;
+	border-radius: 3px;
+}
 .CLRFL-postlisting h2 a,
 .CLRFL-postlisting h2 a:hover {
 	color: white;
@@ -189,7 +193,9 @@ a.thumbnail:hover {
 	float: right;
 }
 #CLRFL-content > .post,
-#CLRFL-content > .page {
+#CLRFL-content > .page,
+#CLRFL-archive-header,
+#CLRFL-pagination {
 	width: 94%;
 	margin: 0 3%;
 }

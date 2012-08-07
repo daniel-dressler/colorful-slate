@@ -65,7 +65,8 @@
 	#CLRFL-footer .credits,
 	.sticky > div > div,
 	hr,
-	.entry-summary a {
+	.entry-summary a,
+	#CLRFL-archive-header h1 {
 		background: #<?php echo get_background_color(); ?>;
 	}
 	.entry-summary a:hover,

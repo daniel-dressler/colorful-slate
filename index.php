@@ -9,8 +9,11 @@
 
 get_header(); ?>
 			<?php if (is_archive()) {?>
+			<div id="CLRFL-archive-header">
 				<h1><?php wp_title();?></h1>
+			</div>
 			<?php } ?>
+			
         	<div class="CLRFL-striped">
         	</div>
 			<?php if ( have_posts() ) : ?>
@@ -23,8 +26,8 @@ get_header(); ?>
 				<?php
 				//pagination
 				global $wp_query;
-				if ($wp_query->max_num_pages > 0) {?>
-					<div id="CLRFL-pagination" class="post CLRFL-color-links">
+				if ($wp_query->max_num_pages > 1) {?>
+					<div id="CLRFL-pagination" class="CLRFL-color-links">
 						<div class="well">
 							<?php
 							echo paginate_links( array(
@@ -40,7 +43,7 @@ get_header(); ?>
 			<?php else : ?>
 
 				<p><?php _e( 'Apologies, but no results were found.', 'colorfulslate' ); ?></p>
-				<hr class="span12">
+				<hr>
 
 			<?php endif; ?>
 <?php get_footer();
