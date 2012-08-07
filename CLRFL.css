@@ -210,7 +210,8 @@ a.thumbnail:hover {
 	margin-top: 10px;
 }
 #CLRFL-comments li {
-	margin-top: 10px;
+	padding: 5px 0 0 5px;
+	margin: 5px 0 0 5px;
 }
 #CLRFL-comments .comment-meta {
 	font-size: 0.6em;

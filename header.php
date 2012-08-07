@@ -78,6 +78,9 @@
 	#respond {
 		border-top: 5px #<?php echo get_background_color(); ?> solid;
 	}
+	.bypostauthor {
+		border-left: 5px #<?php echo get_background_color(); ?> solid;
+	}
 	.CLRFL-striped,
 	#CLRFL-footer .credits span {
 		opacity: <?php echo CLRFL_get_stripe_opacity(); ?>;

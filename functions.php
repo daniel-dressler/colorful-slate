@@ -97,3 +97,5 @@ function CLRFL_get_stripe_opacity() {
 	 * high school math is useful...
 	 */
 }
+/* Wordpress required boiler plate */
+add_theme_support( 'automatic-feed-links' );

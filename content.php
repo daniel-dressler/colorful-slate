@@ -26,6 +26,7 @@
 						</div>
 					<?php } ?>
 		      		<div class="CLRFL-postmeta btn-group">
+						<span class="btn">Posted by <?php the_author_posts_link();?></span>
 						<?php $show_sep = false; ?>
 						<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 						<?php

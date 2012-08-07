@@ -11,7 +11,7 @@
 				<div class="span6"></div>
 			  	<div class="span6">
 			  		<p class="credits">
-			  			<span><a href="http://danieru.com/colorful_slate/">Colorful Slate</a> is a <a href="https://wordpress.org/">Wordpress</a> theme by <a href="http://danieru.com/">Daniel Dressler</a></span>
+			  			<span><a href="http://danieru.com/colorful_slate/">Colorful Slate</a> is a <a href="https://wordpress.org/">WordPress</a> theme by <a href="http://danieru.com/">Daniel Dressler</a></span>
 			  		</p>
 				</div>
 			</div>
