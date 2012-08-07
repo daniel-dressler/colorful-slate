@@ -5,7 +5,6 @@
  * monstor themes attempt to create a CMS within
  * wordpress.
  */
-define('WP_DEBUG', true);
 
 /* Our unique feature, the huge color background & favicon */
 add_theme_support( 'custom-background', array(
