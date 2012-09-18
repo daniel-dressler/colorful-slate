@@ -21,11 +21,11 @@
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " » $site_description";
+		echo " >> $site_description";
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' » ' . sprintf( __( 'Page %s', 'colorfulslate' ), max( $paged, $page ) );
+		echo ' >> ' . sprintf( __( 'Page %s', 'colorfulslate' ), max( $paged, $page ) );
 	?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

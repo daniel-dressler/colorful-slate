@@ -49,7 +49,7 @@
 		      			<?php
 	      				$editPostUrl = get_edit_post_link();
 	      				if ($editPostUrl) {
-	      					echo "<a class='btn' href='$editPostUrl'>⚡ ".__( 'Edit', 'colorfulslate' )."</a>";
+	      					echo "<a class='btn' href='$editPostUrl'> ".__( 'Edit', 'colorfulslate' )."</a>";
 	      				}
 	      				if (comments_open() && !(is_single() || is_page())) {
 	      					comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'colorfulslate' ) . '</span>', __( '<b>1</b> Reply', 'colorfulslate' ), __( '<b>%</b> Replies', 'colorfulslate' ), 'btn' );

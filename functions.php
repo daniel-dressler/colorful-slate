@@ -12,22 +12,22 @@ add_theme_support( 'custom-background', array(
 		'default-color' => 'F36C00',
 	) );
 	
-function CLRFL_enqueue() {
+function clrfl_enqueue() {
 	wp_enqueue_style( "bootstrap",
 	                  get_template_directory_uri()."/lib/bootstrap/css/bootstrap.css");
 	wp_enqueue_style( "bootstrap-responsive",
 	                  get_template_directory_uri()."/lib/bootstrap/css/bootstrap-responsive.css",
 	                  array('bootstrap'));
 	wp_enqueue_style( "CLRFL-style",
-	                  get_template_directory_uri()."/CLRFL.css",
+	                  get_template_directory_uri()."/clrfl.css",
 	                  array('bootstrap', 'bootstrap-responsive'));
 	wp_enqueue_style( "ubuntu-font",
 	                  'http://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic&subset=latin,latin-ext,greek,greek-ext,cyrillic,cyrillic-ext');
 	
 	
 	wp_enqueue_script( 
-		"CLRFL_favicon_js",
-		get_template_directory_uri()."/js/CLRFL_color_favicon.js",
+		"clrfl_favicon_js",
+		get_template_directory_uri()."/js/clrfl_color_favicon.js",
 		array('jquery')
 	);
 	/* Threaded comments */
@@ -35,12 +35,12 @@ function CLRFL_enqueue() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue' );
+add_action( 'wp_enqueue_scripts', 'clrfl_enqueue' );
 
 /* Style sheet */
-function CLRFL_enqueue_style() {
+function clrfl_enqueue_style() {
 }
-add_action( 'wp_enqueue_scripts', 'CLRFL_enqueue_style' );
+add_action( 'wp_enqueue_scripts', 'clrfl_enqueue_style' );
 
 /* Thumbnails */
 add_theme_support( 'post-thumbnails' );
@@ -58,15 +58,15 @@ register_sidebar( array(
 	) );
 
 /* Read more links */
-function CLRFL_excerpt_more($more) {
+function clrfl_excerpt_more($more) {
 	global $post;
 	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
 }
-add_filter('excerpt_more', 'CLRFL_excerpt_more');
+add_filter('excerpt_more', 'clrfl_Excerpt_more');
 
 /* The Stripe background's opacity varies
  * depending on the background color. */
-function CLRFL_get_stripe_opacity() {
+function clrfl_get_stripe_opacity() {
 	/* The darkness of the stripes is based on
 	 * lightness of the background color.
 	 */
@@ -106,4 +106,4 @@ function CLRFL_get_stripe_opacity() {
 }
 /* Wordpress required boiler plate */
 add_theme_support( 'automatic-feed-links' );
-$content_width = 500; //colorful slate is fluid width, so this is not always acurate
+$content_width = 900; //colorful slate is fluid width, so this is not always acurate
