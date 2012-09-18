@@ -18,7 +18,7 @@ function clrfl_enqueue() {
 	wp_enqueue_style( "bootstrap-responsive",
 	                  get_template_directory_uri()."/lib/bootstrap/css/bootstrap-responsive.css",
 	                  array('bootstrap'));
-	wp_enqueue_style( "CLRFL-style",
+	wp_enqueue_style( "clrfl-style",
 	                  get_template_directory_uri()."/clrfl.css",
 	                  array('bootstrap', 'bootstrap-responsive'));
 	wp_enqueue_style( "ubuntu-font",
@@ -36,11 +36,6 @@ function clrfl_enqueue() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'clrfl_enqueue' );
-
-/* Style sheet */
-function clrfl_enqueue_style() {
-}
-add_action( 'wp_enqueue_scripts', 'clrfl_enqueue_style' );
 
 /* Thumbnails */
 add_theme_support( 'post-thumbnails' );
