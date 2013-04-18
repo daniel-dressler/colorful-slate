@@ -1,3 +1,7 @@
+Colorful Slate
+=================
+GPLv3.
+
 == Description ==
 The design goal of Colorful Slate is to take one arbitrary user
 selected color and produce an attractive blog flooded with said color.
